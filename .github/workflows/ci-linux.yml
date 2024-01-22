@@ -41,8 +41,10 @@ jobs:
           - compiler: clang
             cc: clang
             cxx: clang++
-            subtarget: mame
-            executable: mame
+            # subtarget: mame
+            # executable: mame
+            subtarget: tiny
+            executable: mametiny
     steps:
     - uses: actions/checkout@master
     - name: Install dependencies

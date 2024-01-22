@@ -36,8 +36,8 @@ jobs:
             cc: gcc
             cxx: g++
             archopts: -U_FORTIFY_SOURCE
-            subtarget: tiny
-            executable: mametiny
+            subtarget: dummy
+            executable: mamedummy
           - compiler: clang
             cc: clang
             cxx: clang++

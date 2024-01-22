@@ -49,6 +49,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libasound2-dev libxinerama-dev libxi-dev qtbase5-dev qtbase5-dev-tools
+    - name: hago cat para ver info del cpu
+      working-directory: ./
+      run: |
+        cat /proc/cpuinfo
     - name: Install clang
       if: matrix.compiler == 'clang'
       run: sudo apt-get install -y clang
@@ -60,6 +64,14 @@ jobs:
         SUBTARGET: ${{ matrix.subtarget }}
         TOOLS: 1
       run: make -j4
+    - name: hago un ls a ver la estructura de directorios
+      working-directory: ./
+      run: |
+        ls -la
+    - name: hago un find a ver donde encuentro el unidasm
+      working-directory: ./
+      run: |
+        find . -name unidasm
     - name: Validate
       run: ./${{ matrix.executable }} -validate
     - name: Reconcile driver list
